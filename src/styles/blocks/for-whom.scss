@@ -1,0 +1,265 @@
+.for-whom {
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-align: left;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: 70px;
+    margin-top: 25px;
+
+    @include on-desktop {
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 160px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 15px;
+    }
+
+    @include on-desktop {
+      gap: 100px;
+    }
+
+    &--2 {
+      flex-direction: row-reverse;
+
+      @include on-tablet {
+        gap: 50px;
+      }
+
+      @include on-desktop {
+        flex-direction: column;
+      }
+    }
+
+    &--3 {
+      @include on-tablet {
+        gap: 50px;
+      }
+
+      @include on-desktop {
+        flex-direction: column;
+      }
+    }
+
+    &__info {
+      &-top {
+        display: none;
+        gap: 10px;
+        margin-left: 40px;
+        font-family: inherit;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include on-tablet {
+          display: flex;
+        }
+
+        &--2 {
+          @include on-tablet {
+            justify-content: flex-end;
+          }
+
+          @include on-desktop {
+            justify-content: flex-start;
+            margin-left: -10px;
+          }
+        }
+
+        &--3 {
+          @include on-desktop {
+            margin-left: -10px;
+          }
+        }
+      }
+
+      &-bottom {
+        @include on-desktop {
+          margin-top: 40px;
+        }
+
+        &--1 {
+          @include on-tablet {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+          }
+
+          @include on-desktop {
+            gap: 70px;
+          }
+        }
+
+        &--2 {
+          @include on-desktop {
+            width: 300px;
+          }
+        }
+
+        &--3 {
+          @include on-tablet {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+          }
+
+          @include on-desktop {
+            gap: 70px;
+            max-width: 440px;
+          }
+        }
+
+        &-text {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          margin-top: 30px;
+
+          @include on-tablet {
+            margin-top: 25px;
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-family: "Bebas Neuem", sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 54px;
+      text-align: left;
+      letter-spacing: 1.5px;
+      margin: 0;
+      position: relative;
+      text-transform: uppercase;
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        &::after {
+          content: url(/src/images/for-whom/after.svg);
+          position: absolute;
+        }
+      }
+    }
+
+    &__description {
+      @include main-text;
+
+      grid-column: 1 / -1;
+      grid-row: 2;
+
+      margin-top: 20px;
+    }
+  }
+
+  &__image {
+    display: none;
+    cursor: pointer;
+
+    @include on-tablet {
+      display: inline;
+      width: 284px;
+      margin-top: 42px;
+      transition: all $effect-duration ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+      }
+    }
+
+    @include on-desktop {
+      width: 500px;
+      margin-top: 34px;
+    }
+
+    &--2 {
+      @include on-tablet {
+        width: 300px;
+      }
+    }
+
+    &--3 {
+      @include on-tablet {
+        width: 284px;
+      }
+
+      @include on-desktop {
+        width: 470px;
+      }
+    }
+  }
+
+  &__arrow {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 0;
+    color: #828282;
+    writing-mode: vertical-rl;
+
+    &::before {
+      content: url(/src/images/for-whom/line-before.svg);
+      margin-bottom: 10px;
+    }
+
+    &--1 {
+      margin-right: -19px;
+      grid-column: 2 / -1;
+      grid-row: 2 / 2;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        margin-top: -110px;
+        position: absolute;
+        right: 0;
+        margin-right: 8px;
+        height: 100%;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        position: absolute;
+        right: 135px;
+        height: 100%;
+      }
+    }
+  }
+}

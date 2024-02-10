@@ -1,0 +1,189 @@
+.header {
+  position: relative;
+
+  &__bg__image {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      margin-top: -30px;
+      right: 20%;
+    }
+
+    @include on-desktop {
+      left: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @include page-grid;
+    @include content-padding-inline;
+  }
+
+  &__image {
+    z-index: 2;
+    grid-area: 1/1/1/3;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    cursor: pointer;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 1;
+      margin-top: 50px;
+      justify-self: flex-end;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+      grid-column: 7 / 13;
+      grid-row: 1 / 4;
+    }
+  }
+
+  &__title {
+    z-index: 3;
+    color: transparent;
+    -webkit-text-stroke: #03839e 1px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+      grid-row: 1 ;
+      font-size: 64px;
+      line-height: 64px;
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 9;
+      margin-top: 90px;
+    }
+
+    &-span {
+      color: #03839e;
+    }
+  }
+
+  &__info {
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 3 / 5;
+      transform: translateY(-18px);
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+
+    &__price {
+      font-family: Manrope, sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 36px;
+      text-align: left;
+      margin: 0;
+      color: $primarity-text-color;
+    }
+
+      &__text {
+        font-family: Manrope, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+        margin: 0;
+        color: $main-text-color;
+
+        @include on-tablet {
+          margin-top: 1px;
+        }
+
+        @include on-desktop {
+          margin-top: 5px;
+        }
+      }
+    }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 10px;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+    border: 1px solid $buttom-color;
+    background-color: $buttom-color;
+    color: #121212;
+    width: 100%;
+    height: 48px;
+    transition: opacity $effect-duration;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(/src/images/arrow-button.svg);
+      background-repeat: no-repeat;
+      width: 28px;
+      height: 10px;
+      color: #000;
+    }
+
+    @include on-tablet {
+      grid-column: 2 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 4 / 7;
+      transform: translateY(-18px);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+    position: absolute;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    right: 1.5%;
+    bottom: 0;
+    color: #03839e;
+    writing-mode: vertical-rl;
+    transition: all $effect-duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include on-tablet {
+      grid-area: 1 / 1 / 4 / 2;
+      justify-self: start;
+      left: 0;
+    }
+
+    &-arrow {
+      width: 44px;
+      color: #03839e;
+    }
+  }
+}

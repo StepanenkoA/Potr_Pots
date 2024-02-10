@@ -1,0 +1,29 @@
+.nav {
+  display: none;
+
+  @include on-desktop {
+    display: block;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+
+  &__list {
+    transition: all $effect-duration;
+
+    &:hover {
+      box-shadow: 0 5px 5px orange;
+    }
+  }
+
+  &__link {
+    @include main-text;
+
+    color: $main-text-color;
+  }
+}

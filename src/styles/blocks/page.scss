@@ -1,0 +1,26 @@
+.page {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    // font-family: Inter, sans-serif;
+    // color: #333;
+    background-color: $c-gray;
+    margin: 0;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.features {
+  position: relative;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin-top: 25px;
+
+    @include on-tablet {
+      margin-top: 52px;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      margin-top: 74px;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+    font-size: 58px;
+    line-height: 70px;
+    color: #03839e;
+    margin: 0;
+    -webkit-text-stroke: 1.5px #03839e;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    &-span {
+      color: transparent;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--1 {
+      @include on-tablet {
+        grid-column: 1 / 3;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-column: 3 / 5;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &--3 {
+      @include on-tablet {
+        grid-column: 5 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 9 / -1;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      cursor: pointer;
+      transition: box-shadow $effect-duration ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-align: center;
+      margin: 0;
+      margin-top: 35px;
+      text-transform: uppercase;
+      color: #333;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+    }
+
+    &-description {
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+      color: #4f4f4f;
+      margin: 0;
+      margin-top: 20px;
+
+      @include on-tablet {
+        height: 120px;
+      }
+
+      @include on-desktop {
+        height: 72px;
+      }
+    }
+  }
+}
